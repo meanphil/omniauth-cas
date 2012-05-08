@@ -81,6 +81,7 @@ module OmniAuth
           if http.use_ssl?
             http.verify_mode = OpenSSL::SSL::VERIFY_NONE if @options.disable_ssl_verification?
             http.ca_path = @options.ca_path
+            http.ca_file = @options.ca_file
           end
           http.start do |c|
             response = c.get "#{@uri.path}?#{@uri.query}", VALIDATION_REQUEST_HEADERS.dup
