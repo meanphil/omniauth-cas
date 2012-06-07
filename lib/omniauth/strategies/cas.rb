@@ -121,6 +121,13 @@ module OmniAuth
       def login_url(service)
         cas_host + append_params( @options.login_url, { :service => service })
       end
+      
+      # Build a CAS logout URL from +service+.
+      #
+      # @return [String] a URL like `http://cas.mycompany.com/logout`
+      def logout_url
+        cas_host + @options.logout_url
+      end
 
       # Adds URL-escaped +parameters+ to +base+.
       #
