@@ -171,7 +171,7 @@ module OmniAuth
       #
       # @return [String] a URL like `http://cas.mycompany.com/logout`
       def logout_url
-        cas_url +append_params(options.logout_url, { service: service })
+        cas_url + options.logout_url
       end
 
       # Adds URL-escaped +parameters+ to +base+.
